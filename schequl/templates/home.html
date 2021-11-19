@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+ <form method='post' action="{% url 'registration' %}">
+  {% csrf_token %}
+  <div class="container">
+    <label class="pt-2 text-inline"><b>Flight No.</b></label>
+    <input class="form-control" type="text" name="flnm" id="flnm" required>
+
+    <label class="pt-2 text-inline"><b>Depart Date-Time</b></label>
+    <input class="form-control" type="datetime-local" name="ddt" id="ddt" required>
+
+    <label class="pt-2 text-inline"><b>Depart Date-Time</b></label>
+    <input class="form-control" type="datetime-local" name="adt" id="adt" required>
+
+    <label class="pt-2 text-inline"><b>Depart Airport</b></label>
+    <input class="form-control" type="text" name="da" id="da" required>
+
+    <label class="pt-2 text-inline"><b>Arrival Airport</b></label>
+    <input class="form-control" type="text" name="aa" id="aa" required>
+
+   <button type="submit" class="btn btn-success text-center my-5">Add Record</button>
+  </div>
+ </form>
+
+{% endblock %}
